@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #wrapper {
+        width: 900px;
+        height: 800px;
+    }
+    #aside {
+        width: 200px;
+        height: 800px;
+        float: left;
+        background-color: skyblue;
+        text-align: center;
+    }
+    #session {
+        width: 700px;
+        height: 800px;
+        float: left;
+        background-color: gainsboro;
+    }
+    div > img {
+        width: 60px;
+    }
+    #imgWar {
+        width: 100%;
+        height: 100%;
+        /* 투명도 조절 */
+        /* opacity: 50%; */
+        /* 각도 조절 */
+        transform: rotate(25deg);
+    }
+
+</style>
+<script>
+    function minSize() {
+        console.log("마이너스");
+    }
+    function addSize() {
+        console.log("플러스");
+    }
+</script>
+<body>
+    <div id="wrapper">
+        <div id="aside">
+            <!-- 너비, 높이, 투명도, 각도 조절 -->
+            <div> 
+                <img id="minBtn" src="../../images/minus_btn.png" onclick="minSize()">
+                <img id="addBtn" src="../../images/plus_btn.png" onclick="addSize()">
+                <br> <p>너비조절</p>
+            </div>
+            <div>
+                <img id="minBtn" src="../../images/minus_btn.png" onclick="minSize()">
+                <img id="addBtn" src="../../images/plus_btn.png" onclick="addSize()">
+                <br> <p>높이조절</p>
+            </div>
+            <div>
+                <img id="minBtn" src="../../images/minus_btn.png" onclick="minSize()">
+                <img id="addBtn" src="../../images/plus_btn.png" onclick="addSize()">
+                <br> <p>투명도 조절</p>
+            </div>
+            <div>
+                <img id="minBtn" src="../../images/minus_btn.png" onclick="minSize()">
+                <img id="addBtn" src="../../images/plus_btn.png" onclick="addSize()">
+                <br> <p>각도 조절</p>
+            </div>
+        </div>
+
+        <div id="session">
+            <img id="imgWar" src="../../images/warior.png">
+        </div>
+    </div>
+</body>
+</html>
