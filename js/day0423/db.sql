@@ -89,12 +89,21 @@ FROM    emp e1
 WHERE   ename ="ALLEN"
 ;
 
-SELECT  empno   as 사원번호
-       ,ename   as 사원명
-       ,mgr     as 매니저사원번호
-       ,e2.ename
-       ,e2.sal
-FROM    emp e1, emp e2
-WHERE   e1.ename ="ALLEN"
-AND     e2.empno = e1.mgr
+-- 문제 6
+SELECT ename as 사원명
+       ,sal   as 급여
+FROM   emp e
+WHERE  1 = 1
+AND    sal > (
+              SELECT (AVG(sal) + 1000)
+              FROM   emp
+              WHERE  comm IS NOT NULL        
+)
+ORDER BY 2
 ;
+-- 7. 급여가 두번째로 높은 사원과 같은 부서에서 근무에서 사원의 이름, 급여, 부서번호 출력
+-- 8. 이름이 A로 시작하는 사원들의 급여의 합보다 높은 급여를 받는 사원의 사원명, 급여 출력
+-- 9. 입사일이 세번째로 늦은 사원과 같은 부서에서 근무하는 사원들의 급여의 합
+-- 10. 최대 커미션을 받는 사원의 매니저가 근무하는 부서명, 위치, 부서번호 출력
+-- 11. 최대 급여에서 최소 급여를 뺀 금액보다도 더 많은 급여를 받는 사원의 이름, 급여 출력
+-- 12. SALES 부서의 평균 급여보다 급여를 더 많이 받는 사원의 이름, 급여 출력
