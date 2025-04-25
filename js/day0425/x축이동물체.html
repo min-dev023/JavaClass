@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: hotpink;
+        position: absolute;
+        left: 0px;
+        top: 150px;
+    }
+</style>
+<script>
+    let iLeft = 0;
+    // 문서 내의 빨간 원의 css 중 포지션 left 값을 증가시킨다.
+    function move() {
+        iLeft += 1;
+        let box = document.getElementById("box");
+
+        box.style.left = iLeft + "px";
+    }
+
+    function moveAuto() {
+        // 자동은 기존의 수현 구동 코드를 일정시간 간격으로 호출하면 됨
+        // 따라서 언제나 수동 코드를 완성해놓아야함
+        
+        //setTimeout or setInterval
+        setInterval("move()", 1);
+        console.log("moveAuto");
+    }
+
+    addEventListener("load", function(){
+        let m = document.querySelector("#manual");
+        
+        m.addEventListener("click", function(){
+            move();
+        });
+        let a = document.querySelector("#auto");
+        a.addEventListener("click", function(){
+            moveAuto();
+        });
+    });
+</script>
+<body>
+    <input type="button" value="수동" id="manual"></input>
+    <input type="button" value="자동" id="auto"></input>
+
+    <div id="box"></div>
+</body>
+</html>
