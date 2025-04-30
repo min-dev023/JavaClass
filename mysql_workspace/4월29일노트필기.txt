@@ -6,10 +6,6 @@ USER is "SYS"
 SQL> -- 현재 접속한 계정을 확인하는 받ㅇ법
 SQL> -- 오라클은 데이터베이스라는 용어 보다는 tablespace 라는 용어를
 SQL> // 사용해 여러 데이터베이스 파일을 묶는 논리적 개념
-SELECT * FROM EMP
-              *
-ERROR at line 1:
-ORA-00942: table or view does not exist 
 
 
 SQL> -- 사용해 여러 데이터베이스 파일을 묶는 논리적 개념
@@ -22,15 +18,6 @@ SQL> CREATE TABLESPACE javaspace
 Tablespace created.
 
 SQL> -- 유저를 생성한다.
-SQL> CREATE USER JS
-  2  IDENTIFIED BY 1234
-  3  DEFAULT TABLESPACE JAVASPACE
-  4  QOUTA UNLIMITED ON JAVASPACE;
-QOUTA UNLIMITED ON JAVASPACE
-*
-ERROR at line 4:
-ORA-00922: missing or invalid option 
-
 
 SQL> CREATE USER JS
   2  IDENTIFIED BY 1234
@@ -138,6 +125,7 @@ SQL> -- 기존에 생성한 MEMBERSHIP 테이블은 검증되지 않고 결점이 많은
 SQL> -- 데이터를 허용하므로 , 데이터의 신뢰성이 없다. 데이터로써 가치가 없음.
 SQL> -- 테이블 성싱 시 각 컬럼에 들어갈 데이터를 까다롭게 각종 제한을 가하는
 SQL> -- 데이터베이스에 조건을 가리켜 제약조건(CONSTRAINTS)
+
 SQL> CRETAE TABLE MEMBER(
 SP2-0734: unknown command beginning "CRETAE TAB..." - rest of line ignored.
 SQL> CREATE TABLE MEMBER(
